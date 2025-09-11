@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white p-6 md:p-10 rounded-xl shadow-lg w-full max-w-sm text-center">
+        <h1 class="text-2xl font-bold text-slate-800 mb-2">Driver App</h1>
+        <p class="text-slate-500 mb-6">Send your live location to the tracking system.</p>
+
+        <div class="mb-6">
+            <label for="busSelect" class="block text-left font-medium text-slate-700 mb-2">Select your Bus Number</label>
+            <select id="busSelect" class="w-full p-3 rounded-lg border border-slate-300 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="" disabled selected>Loading buses...</option>
+            </select>
+        </div>
+
+        <button id="trackButton" class="w-full py-4 px-6 rounded-xl font-bold text-white bg-green-600 hover:bg-green-700 transition-colors duration-200" disabled>Start Tracking</button>
+
+        <div id="statusMessage" class="mt-6 text-center text-sm font-medium">
+            <p class="text-slate-500">Status: Waiting to start tracking...</p>
+        </div>
+    </div>
+    
+    <script src="./driver.js"></script>
+</body>
+</html>
